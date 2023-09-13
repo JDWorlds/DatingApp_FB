@@ -12,12 +12,12 @@ export class AppComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
+  ngOnInit() : void {
     this.http.get('http://localhost:5226/newapp/Users').subscribe({
     // call back function  
-    next     : ()=> this.users = Response,
+    next     : Response => this.users = Response,
     error    : error => console.log(error),
-    complete : () => console.log('Request has complete')
+    complete : () => console.log(this.title)
     })
   }
 }
